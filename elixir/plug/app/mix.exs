@@ -23,7 +23,8 @@ defmodule App.MixProject do
   defp deps do
     [
       {:plug_cowboy, "~> 2.0"},
-      {:appsignal_plug, "~> 2.0"}
+      {:appsignal_plug, "~> 2.0"},
+      {:jason, "~> 1.1"}
     ]
   end
 end
