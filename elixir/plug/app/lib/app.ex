@@ -1,18 +1,14 @@
 defmodule App do
-  @moduledoc """
-  Documentation for `App`.
-  """
+  use Plug.Router
 
-  @doc """
-  Hello world.
+  plug :match
+  plug :dispatch
 
-  ## Examples
+  get "/" do
+    send_resp(conn, 200, "Welcome")
+  end
 
-      iex> App.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  match _ do
+    send_resp(conn, 404, "Oops!")
   end
 end
